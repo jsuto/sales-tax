@@ -49,7 +49,6 @@ def main():
     total_price = 0
 
     for (amount, product, price) in read_products():
-        print(amount, product, price)
         basic_sales_tax = calc_basic_sales_tax(product, price)
         import_tax = calc_import_tax(product, price)
 
@@ -60,6 +59,9 @@ def main():
         # Product gross price = amount * (price + sales tax)
         gross_price = amount * (price + sales_tax)
         total_price += gross_price
+
+        formatted_gross_price = '{:.2f}'.format(gross_price)
+        print("{} {}: {}".format(amount, product, formatted_gross_price))
 
     # Print only two digits of the fraction part of the price
     print('Total sales tax: {:.2f}'.format(total_sales_tax))
