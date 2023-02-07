@@ -76,7 +76,7 @@ def main():
         basic_sales_tax = calc_basic_sales_tax(product, price)
         import_tax = calc_import_tax(product, price)
 
-        sales_tax = basic_sales_tax + import_tax
+        sales_tax = round_tax(basic_sales_tax + import_tax)
 
         total_sales_tax += sales_tax
 
