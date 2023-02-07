@@ -15,5 +15,15 @@ def calc_import_tax(product, price):
     return 0
 
 
+def calc_basic_sales_tax(product, price):
+    """
+    We allow case insensitivity for the product name
+    """
+
+    if re.search(r'(book|chocolate|pills)', product, re.I):
+        return 0
+    return price * SALES_TAX
+
+
 if __name__ == '__main__':
     main()
