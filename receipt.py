@@ -25,5 +25,9 @@ def calc_basic_sales_tax(product, price):
     return price * SALES_TAX
 
 
+def main():
+    pass
+
+
 if __name__ == '__main__':
     main()
