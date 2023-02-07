@@ -61,8 +61,9 @@ def main():
         gross_price = amount * (price + sales_tax)
         total_price += gross_price
 
-    print('Total sales tax:', total_sales_tax)
-    print('Total:', total_price)
+    # Print only two digits of the fraction part of the price
+    print('Total sales tax: {:.2f}'.format(total_sales_tax))
+    print('Total: {:.2f}'.format(total_price))
 
 
 if __name__ == '__main__':
