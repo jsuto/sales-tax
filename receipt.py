@@ -45,8 +45,24 @@ def read_products():
 
 
 def main():
+    total_sales_tax = 0
+    total_price = 0
+
     for (amount, product, price) in read_products():
         print(amount, product, price)
+        basic_sales_tax = calc_basic_sales_tax(product, price)
+        import_tax = calc_import_tax(product, price)
+
+        sales_tax = basic_sales_tax + import_tax
+
+        total_sales_tax += sales_tax
+
+        # Product gross price = amount * (price + sales tax)
+        gross_price = amount * (price + sales_tax)
+        total_price += gross_price
+
+    print('Total sales tax:', total_sales_tax)
+    print('Total:', total_price)
 
 
 if __name__ == '__main__':
