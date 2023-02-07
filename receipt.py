@@ -10,6 +10,30 @@ SALES_TAX = 0.1
 ROUND_FACTOR = 0.05
 
 
+def round_tax(value):
+    """
+    Based on the pattern in the example outputs rounding always
+    go higher, so 10.01 is rounded to 10.05 and not to 10.00.
+
+    The algorithm to get the rounded value:
+
+    11.8125 % 0.05 = 0.0125 (We need to round this value up)
+    0.05 - 0.0125 = 0.0375 (Calculate how much to increase)
+    11.8125 + 0.0375 = 11.85 (The rounded value)
+    """
+
+    """
+    Workaround for the floating point arithmetic imprecision, eg.
+    10 % 0.05 = 0.04999999999999945
+    """
+    offset = 0
+
+    if value > 0:
+        offset = ROUND_FACTOR - round(value % ROUND_FACTOR, 4)
+
+    return round(value + offset, 2)
+
+
 def calc_import_tax(product, price):
     if re.search(r'imported ', product, re.I):
         return price * IMPORT_TAX
