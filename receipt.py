@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+import re
+
+
 IMPORT_TAX = 0.05
 SALES_TAX = 0.1
 ROUND_FACTOR = 0.05
