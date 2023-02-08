@@ -2,6 +2,8 @@
 
 * Python3 interpreter is installed to /usr/bin/python3
 
+* pre-commit is installed, see https://pre-commit.com/ for more
+
 * Rounding the tax value always goes higher, so 10.01 is rounded to 10.05 and not to 10.00.
 
 * Products are read from stdin, 1 product per line. Fields are separated by semicolon (;), eg.
