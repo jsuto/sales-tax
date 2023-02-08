@@ -89,7 +89,7 @@ def main():
         print(f"{amount} {product}: {gross_price:.2f}")
 
     # Print only two digits of the fraction part of the price
-    print(f"Total sales tax: {total_sales_tax:.2f}")
+    print(f"Sales Taxes: {total_sales_tax:.2f}")
     print(f"Total: {total_price:.2f}")
 
 
