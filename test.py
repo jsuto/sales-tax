@@ -1,10 +1,13 @@
-import receipt
+"""Module for testing the Receipt app"""
 import unittest
+import receipt
 
 
 class TestReceipt(unittest.TestCase):
+    """Class for testing the Receipt app"""
 
     def test_import_tax(self):
+        """Test the import tax calculator function"""
         data = [
             ('imported box of chocolates', 10),
             ('book', 10),
@@ -27,6 +30,7 @@ class TestReceipt(unittest.TestCase):
         self.assertEqual(expected_results, results)
 
     def test_basic_sales_tax(self):
+        """Test the basic sales tax calculator function"""
         data = [
             ('imported box of chocolates', 10),
             ('watch', 10),
@@ -49,6 +53,7 @@ class TestReceipt(unittest.TestCase):
         self.assertEqual(expected_results, results)
 
     def test_round_tax(self):
+        """Test the tax rounding function"""
         data = [
             10,
             10.01,
